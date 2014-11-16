@@ -29,4 +29,12 @@ module.exports.models = {
   ***************************************************************************/
   // migrate: 'alter'
 
+  connection: "localMySQL",
+  schema: true,
+  migrate: "safe",
+
+  autoPK: false,
+  autoCreatedAt: false,
+  autoUpdatedAt: false
+
 };
