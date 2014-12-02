@@ -22,14 +22,14 @@ module.exports = {
 		}
 	},
 
-	getAllSchools: function(){
+	getAllSchools: function(callback){
 		Schools.find({}).exec(function(error, schools){
 			if(error){
 				console.log("Schools could not be found");
-				console.log(error);
+				return callback(error, []);
 			} else{
-				console.log("All schools successfully found");
-				console.log(schools);
+				console.log(schools.length + " schools found");
+				return callback(null, schools);
 			}
 		});
 	}

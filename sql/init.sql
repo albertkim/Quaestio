@@ -12,6 +12,7 @@ CREATE TABLE SCHOOLS(
 );
 
 INSERT INTO SCHOOLS (NAME, SHORTNAME, CITY, COUNTRY, WEBSITE) VALUES ("University of British Columbia", "UBC", "Vancouver", "Canada", "www.ubc.ca");
+INSERT INTO SCHOOLS (NAME, SHORTNAME, CITY, COUNTRY, WEBSITE) VALUES ("Simon Fraser University", "SFU", "Vancouver", "Canada", "www.sfu.ca");
 
 CREATE TABLE DEPARTMENTS(
 	NAME VARCHAR(50) NOT NULL,
