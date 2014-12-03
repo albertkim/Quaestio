@@ -19,11 +19,15 @@ module.exports = {
 		},
 		website: {
 			type: "string"
+		},
+		departments: {
+			collection: "Departments",
+			via: "schoolName"
 		}
 	},
 
 	getAllSchools: function(callback){
-		Schools.find({}).exec(function(error, schools){
+		Schools.find({}).populate("departments").exec(function(error, schools){
 			if(error){
 				console.log("Schools could not be found");
 				return callback(error, []);

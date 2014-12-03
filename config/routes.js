@@ -32,7 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  "get /": "SchoolController.get"
+  "get /": { view: "homepage" },
 
   /***************************************************************************
   *                                                                          *
@@ -43,5 +43,8 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  "get /schools/:school": "CourseController.get",
+  "get /schools": "SchoolController.get"
 
 };

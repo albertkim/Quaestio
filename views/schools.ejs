@@ -1,0 +1,8 @@
+<% include partials/header %>
+	
+	<h3>Schools: </h3>
+	<% for(var i=0; i<schools.length; i++) { %>
+	   <div><a href="/schools/<%= schools[i].name %>"><%= schools[i].name %></a></div>
+	<% } %>
+
+<% include partials/footer %>
