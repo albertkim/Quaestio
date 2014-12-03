@@ -45,8 +45,21 @@ module.exports = {
 				console.log("Departments could not be found");
 				return callback(error, []);
 			} else{
+
+				// organize courses into objects grouped by departments
 				var coursesSortedByDepartment = _.groupBy(courses, 'DEPARTMENTID');
-				return callback(null, coursesSortedByDepartment);
+
+				// modify the structure of the courses returned to be an array organized by their departments
+				var departmentList = [];
+				_.each(coursesSortedByDepartment, function(value, key){
+					var fullDepartment = {
+						departmentId: key,
+						courses: value
+					};
+					departmentList.push(fullDepartment);
+				});
+
+				return callback(null, departmentList);
 			}
 		});
 	}

@@ -8,7 +8,7 @@
 	<% for(var i=0; i<departments.length; i++){ %>
 		<h3><%= departments[i].departmentId %></h3>
 		<% for(var j=0; j<departments[i].courses.length; j++){ %>
-			<h3><%= departments[i].courses[j].NAME %></h3>
+			<li><a href="/schools/<%= departments[i].courses[j].SCHOOLNAME %>/<%=departments[i].courses[j].ID%>"><%= departments[i].courses[j].NAME %></a></li>
 		<% } %>
 	<% } %>
 
