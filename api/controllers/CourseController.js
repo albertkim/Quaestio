@@ -9,8 +9,21 @@ module.exports = {
 				console.log(error);
 			} else{
 				console.log("Departments: ");
-				console.log(departments);
-				res.view("departments", {schoolName: schoolName, departments: departments});
+
+				var departmentList = [];
+
+				_.each(departments, function(value, key){
+					var fullDepartment = {
+						departmentId: key,
+						courses: value
+					};
+					departmentList.push(fullDepartment);
+					console.log(fullDepartment);
+				});
+
+				console.log(departmentList);
+
+				res.view("departments", {schoolName: schoolName, departments: departmentList});
 			}
 			
 		});

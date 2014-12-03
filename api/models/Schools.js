@@ -5,7 +5,6 @@ module.exports = {
 	attributes: {
 		name: {
 			type: "string",
-			required: true,
 			primaryKey: true
 		},
 		shortName: {
@@ -21,13 +20,13 @@ module.exports = {
 			type: "string"
 		},
 		departments: {
-			collection: "Departments",
+			collection: "departments",
 			via: "schoolName"
 		}
 	},
 
 	getAllSchools: function(callback){
-		Schools.find({}).populate("departments").exec(function(error, schools){
+		Schools.find().populate("departments").exec(function(error, schools){
 			if(error){
 				console.log("Schools could not be found");
 				return callback(error, []);

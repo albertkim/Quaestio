@@ -4,6 +4,12 @@
 	<a href="<%= schoolName %>"><%= schoolName %></a>
 	
 	<h3>Courses: </h3>
-	
+
+	<% for(var i=0; i<departments.length; i++){ %>
+		<h3><%= departments[i].departmentId %></h3>
+		<% for(var j=0; j<departments[i].courses.length; j++){ %>
+			<h3><%= departments[i].courses[j].NAME %></h3>
+		<% } %>
+	<% } %>
 
 <% include partials/footer %>
