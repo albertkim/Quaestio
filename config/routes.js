@@ -44,6 +44,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  "get /register": "UserController.get",
+
   "get /schools/:school/:courseId": "CourseController.getCourse",
   "get /schools/:school": "CourseController.get",
   "get /schools": "SchoolController.get"

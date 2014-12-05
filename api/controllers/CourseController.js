@@ -19,7 +19,12 @@ module.exports = {
 	getCourse: function(req, res){
 		var schoolName = req.param("school");
 		var courseId = req.param("courseId");
-		res.view("course", { schoolName: schoolName });
+
+		Courses.getCourseById(courseId, function(error, course){
+			console.log(course[0]);
+			res.view("course", { schoolName: schoolName, course: course[0] });
+		})
+		
 	}
 	
 }

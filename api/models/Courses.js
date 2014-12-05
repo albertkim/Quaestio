@@ -19,6 +19,17 @@ module.exports = {
 		}
 	},
 
+	getCourseById: function(courseId, callback){
+		Courses.find({where: {id: courseId}}).exec(function(error, course){
+			if(error){
+				console.log("Course with id " + courseId + " could not be found.");
+				return callback(error, null);
+			} else{
+				return callback(null, course);
+			}
+		});
+	},
+
 	getCoursesBySchool: function(schoolName, callback){
 		Courses.find({where: {schoolName: schoolName}}).exec(function(error, courses){
 			if(error){
