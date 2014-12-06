@@ -8,8 +8,6 @@ module.exports = {
 			if(error){
 				console.log(error);
 			} else{
-				console.log("Departments: ");
-
 				res.view("departments", {schoolName: schoolName, departments: departments});
 			}
 			

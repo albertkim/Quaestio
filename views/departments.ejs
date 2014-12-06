@@ -1,15 +1,17 @@
 <% include partials/header %>
 
-	<h3>School: </h3>
-	<a href="<%= schoolName %>"><%= schoolName %></a>
-	
-	<h3>Courses: </h3>
+	<div class="container">
 
-	<% for(var i=0; i<departments.length; i++){ %>
-		<h3><%= departments[i].departmentId %></h3>
-		<% for(var j=0; j<departments[i].courses.length; j++){ %>
-			<li><a href="/schools/<%= departments[i].courses[j].SCHOOLNAME %>/<%=departments[i].courses[j].ID%>"><%= departments[i].courses[j].NAME %></a></li>
+		<h3>School: </h3>
+		<a href="<%= schoolName %>"><%= schoolName %></a>
+
+		<% for(var i=0; i<departments.length; i++){ %>
+			<h3><%= departments[i].departmentName %></h3>
+			<% for(var j=0; j<departments[i].courses.length; j++){ %>
+				<li><a href="/schools/<%= departments[i].courses[j].schoolName %>/<%=departments[i].courses[j].courseId%>"><%= departments[i].courses[j].courseName %></a></li>
+			<% } %>
 		<% } %>
-	<% } %>
+
+	</div>
 
 <% include partials/footer %>

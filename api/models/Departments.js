@@ -38,22 +38,31 @@ module.exports = {
 	*/
 
 	getDepartmentsBySchool: function(schoolName, callback){
-		Departments.query("SELECT * FROM DEPARTMENTS D, COURSES C WHERE D.SCHOOLNAME = '" 
+		Departments.query("SELECT "
+			+ "D.NAME AS departmentName, "
+			+ "D.SHORTNAME AS departmentShortName, "
+			+ "SCHOOLNAME AS schoolName, "
+			+ "C.NAME AS courseName, "
+			+ "C.SHORTNAME AS courseShortName, "
+			+ "DEPARTMENTID AS departmentId, "
+			+ "C.ID AS courseId "
+			+ "FROM DEPARTMENTS D, COURSES C WHERE D.SCHOOLNAME = '" 
 			+ schoolName 
 			+ "' AND D.ID = C.DEPARTMENTID", function(error, courses){
 			if(error){
 				console.log("Departments could not be found");
 				return callback(error, []);
 			} else{
+				console.log(courses);
 
 				// organize courses into objects grouped by departments
-				var coursesSortedByDepartment = _.groupBy(courses, 'DEPARTMENTID');
+				var coursesSortedByDepartment = _.groupBy(courses, 'departmentName');
 
 				// modify the structure of the courses returned to be an array organized by their departments
 				var departmentList = [];
 				_.each(coursesSortedByDepartment, function(value, key){
 					var fullDepartment = {
-						departmentId: key,
+						departmentName: key,
 						courses: value
 					};
 					departmentList.push(fullDepartment);
