@@ -31,7 +31,6 @@ module.exports = {
 				console.log("Schools could not be found");
 				return callback(error, []);
 			} else{
-				console.log(schools.length + " schools found");
 				return callback(null, schools);
 			}
 		});

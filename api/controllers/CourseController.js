@@ -8,7 +8,9 @@ module.exports = {
 			if(error){
 				console.log(error);
 			} else{
-				res.view("departments", {schoolName: schoolName, departments: departments});
+				console.log(departments);
+				res.view("departments", {schoolName: schoolName, departments: []});
+				// res.view("departments", {schoolName: schoolName, departments: departments});
 			}
 			
 		});

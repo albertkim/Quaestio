@@ -23,9 +23,9 @@ module.exports = {
 		}
 	},
 
-	/*
+	
 	getDepartmentsBySchool: function(schoolName, callback){
-		Departments.find({schoolName: schoolName}).populate("courses").exec(function(error, departments){
+		Departments.find({schoolName: "University of British Columbia"}).populate("courses").exec(function(error, departments){
 			if(error){
 				console.log("Departments could not be found");
 				return callback(error, []);
@@ -35,8 +35,9 @@ module.exports = {
 			}
 		});
 	}
-	*/
+	
 
+	/*
 	getDepartmentsBySchool: function(schoolName, callback){
 		Departments.query("SELECT "
 			+ "D.NAME AS departmentName, "
@@ -72,5 +73,6 @@ module.exports = {
 			}
 		});
 	}
+	*/
 
 }
