@@ -25,12 +25,12 @@ module.exports = {
 		}
 	},
 
-	getAllSchools: function(callback){
-		Schools.find().populate("departments").exec(function(error, schools){
-			if(error){
+	getAllSchools: function(callback) {
+		Schools.find().populate("departments").exec(function(error, schools) {
+			if(error) {
 				console.log("Schools could not be found");
 				return callback(error, []);
-			} else{
+			} else {
 				return callback(null, schools);
 			}
 		});

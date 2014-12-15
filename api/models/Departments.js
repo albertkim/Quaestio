@@ -25,12 +25,12 @@ module.exports = {
 	},
 
 	
-	getDepartmentsBySchool: function(schoolName, callback){
-		Departments.find({schoolName: "University of British Columbia"}).populate("courses").exec(function(error, departments){
-			if(error){
+	getDepartmentsBySchool: function(schoolName, callback) {
+		Departments.find({schoolName: "University of British Columbia"}).populate("courses").exec(function(error, departments) {
+			if(error) {
 				console.log("Departments could not be found");
 				return callback(error, []);
-			} else{
+			} else {
 				console.log(departments.length + " departments found");
 				return callback(null, departments);
 			}

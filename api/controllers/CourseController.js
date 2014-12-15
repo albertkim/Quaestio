@@ -8,7 +8,6 @@ module.exports = {
 			if(error){
 				console.log(error);
 			} else{
-				console.log(departments);
 				res.view("departments", {schoolName: schoolName, departments: departments});
 			}
 			
@@ -20,7 +19,7 @@ module.exports = {
 		var courseId = req.param("courseId");
 
 		Courses.getCourseById(courseId, function(error, course){
-			console.log(course[0]);
+            console.log(course);
 			res.view("course", { schoolName: schoolName, course: course[0] });
 		})
 		

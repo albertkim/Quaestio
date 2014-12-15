@@ -1,12 +1,11 @@
 module.exports = {
 
 	tableName: "users",
+    
+    autoPK: true,
+    autoCreatedAt: true,
 
 	attributes: {
-		id: {
-			type: "integer",
-			primaryKey: true
-		},
 		email: {
 			type: "string",
 			required: true
@@ -17,24 +16,21 @@ module.exports = {
 		password: {
 			type: "string",
 			required: true
-		},
-		dateCreated: {
-			type: "datetime"
 		}
 	},
 
-	addUser: function(email, name, password, dateCreated){
+	addUser: function(email, name, password, dateCreated) {
 		var newUser = {
 			email: email,
 			name: name,
 			password: password,
 			dateCreated: new Date()
 		}
-		Users.create(newUser).exec(function(error, user){
-			if(error){
+		Users.create(newUser).exec(function(error, user) {
+			if(error) {
 				console.log("User could not be created");
 				console.log(error);
-			} else{
+			} else {
 				console.log("Created user " + user);
 			}
 		});

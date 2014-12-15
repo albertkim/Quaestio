@@ -1,11 +1,16 @@
 <% include partials/header %>
 
 	<div class="container">
-
+        
 		<h3>School: </h3>
 		<a href="<%= schoolName %>"><%= schoolName %></a>
 		
 		<h3>Course: <%= course.name %></h3>
+        
+		<% for(var i=0; i<course.units.length; i++) { %>
+            <% var unit = course.units[i]; %>
+            <div><a><%= unit.name %></a></div>
+		<% } %>
 
 	</div>
 
