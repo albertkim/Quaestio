@@ -19,10 +19,38 @@ module.exports = {
 		var courseId = req.param("courseId");
 
 		Courses.getCourseById(courseId, function(error, course){
-            console.log(course);
 			res.view("course", { schoolName: schoolName, course: course[0] });
 		})
 		
-	}
+	},
+    
+    getThreadsByUnitId: function(req, res){
+        var unitId = req.param("unitId");
+        
+        Units.getThreadsByUnitId(unitId, function(error, threads){
+            if(error) {
+                console.log(error);   
+            } else {
+                console.log(threads);
+                return threads;
+            }
+        });
+    },
+    
+    subscribeToThreads: function(req, res) {
+        var unitId = req.param("unitId");
+        Thread.subscribe(req.socket);
+    },
+    
+    subscribeToPosts: function(req, res){
+        var threadId = req.param("threadId");
+        Post.find({where: {"threadId": threadId}}).exec(function(error, post) {
+            if(error) {
+                console.log(error);
+            } else {
+                Post.subscribe(req.socket, post);
+            }
+        });
+    }
 	
 }

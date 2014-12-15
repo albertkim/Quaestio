@@ -21,6 +21,14 @@ module.exports = {
         }
     },
     
-    
+    getThreadsByUnitId: function(unitId, callback){
+        Threads.find({where: {unitId: unitId}}).populate("chats").exec(function(error, threads){
+            if(error) {
+                console.log(error);
+            } else {
+                return threads;   
+            }
+        });
+    }
     
 }

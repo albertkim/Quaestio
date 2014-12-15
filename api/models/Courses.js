@@ -20,7 +20,7 @@ module.exports = {
             via: "courseId"
         }
 	},
-
+    
 	getCourseById: function(courseId, callback) {
 		Courses.find({where: {id: courseId}}).populate("units").exec(function(error, course) {
 			if(error) {
@@ -31,7 +31,8 @@ module.exports = {
 			}
 		});
 	},
-
+    
+    // Not currently used
 	getCoursesBySchool: function(schoolName, callback) {
 		Courses.find({where: {schoolName: schoolName}}).exec(function(error, courses) {
 			if(error) {
@@ -43,7 +44,8 @@ module.exports = {
 			}
 		});
 	},
-
+    
+    // Not currently used
 	getCoursesByDepartment: function(departmentId, callback) {
 		Courses.find({where: {departmentId: departmentId}}).exec(function(error, courses) {
 			if(error) {

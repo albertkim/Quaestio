@@ -1,6 +1,6 @@
 module.exports = {
-
-	tableName: "posts",
+ 
+    tableName: "chats",
     
     autoPK: true,
     autoCreatedAt: true,
@@ -10,22 +10,13 @@ module.exports = {
             model: "users",
             required: true
         },
-        threadId: {
-            model: "threads",
+        postId: {
+            model: "posts",
             required: true
         },
         content: {
             type: "string"
-        },
-        isDeleted: {
-            type: "boolean"   
-        },
-        chats: {
-            collection: "chats",
-            via: "postId"
         }
-	},
-
-	
-
+	}
+    
 }
