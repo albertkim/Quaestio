@@ -6,9 +6,9 @@
 		<a href="<%= schoolName %>"><%= schoolName %></a>
 
 		<% for(var i=0; i<departments.length; i++){ %>
-			<h3><%= departments[i].departmentName %></h3>
+			<h3><%= departments[i].name %></h3>
 			<% for(var j=0; j<departments[i].courses.length; j++){ %>
-				<li><a href="/schools/<%= departments[i].courses[j].schoolName %>/<%=departments[i].courses[j].courseId%>"><%= departments[i].courses[j].courseName %></a></li>
+				<li><a href="/schools/<%= departments[i].schoolName %>/<%=departments[i].courses[j].id%>"><%= departments[i].courses[j].name %></a></li>
 			<% } %>
 		<% } %>
 

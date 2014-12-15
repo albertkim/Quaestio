@@ -45,7 +45,8 @@ module.exports.connections = {
     host: 'localhost',
     user: 'quaestio',
     password: 'password',
-    database: 'quaestio'
+    database: 'quaestio',
+    migrate: 'alter'
   },
 
   /***************************************************************************

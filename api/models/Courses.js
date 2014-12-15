@@ -5,7 +5,8 @@ module.exports = {
 	attributes: {
 		id: {
 			type: "integer",
-			primaryKey: true
+			primaryKey: true,
+            unique: true
 		},
 		name: {
 			type: "string",
@@ -15,7 +16,7 @@ module.exports = {
 			type: "string"
 		},
 		departmentId: {
-			model: "Departments"
+			model: "departments"
 		}
 	},
 

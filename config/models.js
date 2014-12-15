@@ -27,11 +27,10 @@ module.exports.models = {
   * See http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
 
   connection: "localMySQL",
   schema: true,
-  migrate: "safe",
+  migrate: "alter",
 
   autoPK: false,
   autoCreatedAt: false,

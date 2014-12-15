@@ -5,7 +5,8 @@ module.exports = {
 	attributes: {
 		id: {
 			type: 'integer',
-			primaryKey: true
+			primaryKey: true,
+            unique: true
 		},
 		name: {
 			type: "string",
@@ -15,10 +16,10 @@ module.exports = {
 			type: "string"
 		},
 		schoolName: {
-			model: 'Schools'
+			model: 'schools'
 		},
 		courses: {
-			collection: 'Courses',
+			collection: 'courses',
 			via: "departmentId"
 		}
 	},
@@ -38,6 +39,9 @@ module.exports = {
 	
 
 	/*
+    // This was used when I couldn't get the populate() method working
+    // WARNING: The json field names returned in this method are slightly different from the one above. Adjust view accordingly.
+    
 	getDepartmentsBySchool: function(schoolName, callback){
 		Departments.query("SELECT "
 			+ "D.NAME AS departmentName, "
