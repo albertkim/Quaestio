@@ -20,13 +20,13 @@ module.exports = {
             via: "unitId"
         }
     },
-    
-    getThreadsByUnitId: function(unitId, callback){
-        Threads.find({where: {unitId: unitId}}).populate("chats").exec(function(error, threads){
+
+    getUnitsByCourseId: function(courseId, callback) {
+        Units.find({where: {courseId: courseId}}).exec(function(error, units){
             if(error) {
-                console.log(error);
+                callback(error, null);
             } else {
-                return threads;   
+                callback(null, units);
             }
         });
     }

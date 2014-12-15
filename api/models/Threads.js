@@ -23,6 +23,16 @@ module.exports = {
         isAssignmentSpecific: {
             type: "boolean"
         }
+    },
+    
+    getThreadsByUnitId: function(unitId, callback){
+        Threads.find({where: {unitId: unitId}}).exec(function(error, threads){
+            if(error) {
+                callback(error, null);
+            } else {
+                callback(null, threads);
+            }
+        });
     }
     
 }

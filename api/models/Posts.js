@@ -15,7 +15,8 @@ module.exports = {
             required: true
         },
         content: {
-            type: "string"
+            type: "string",
+            required: true
         },
         isDeleted: {
             type: "boolean"   
@@ -26,6 +27,14 @@ module.exports = {
         }
 	},
 
-	
+	getPostsByThreadId: function(threadId, callback){
+        Posts.find({where: {threadId: threadId}}).exec(function(error, threads){
+            if(error) {
+                callback(error, null);   
+            } else {
+                callback(null, threads);
+            }
+        });   
+    }
 
 }

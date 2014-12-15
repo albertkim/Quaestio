@@ -1,3 +1,5 @@
+# NOTE: This script is not actively maintained. It will be kept around for reference purposes in case we need to use another database
+
 CREATE TABLE SCHOOLS(
 	"NAME" VARCHAR(100) NOT NULL,
 	SHORTNAME VARCHAR(10) NOT NULL,

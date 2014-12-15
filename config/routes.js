@@ -49,9 +49,12 @@ module.exports.routes = {
     
     // Course page
     "get /schools/:school/:courseId": "CourseController.getCourse",
+    
+    "get /api/getUnitsByCourseId/:courseId": "CourseController.getUnitsByCourseId",
     "get /api/subscribeToThreads/:unitId": "CourseController.subscribeToThreads",
     "get /api/subscribeToPosts/:threadId": "CourseController.subscribeToPosts",
-    "get /api/getThreads/:unitId": "CourseController.getThreadsByUnitId",
+    "get /api/getThreadsByUnitId/:unitId": "CourseController.getThreadsByUnitId",
+    "get /api/getPostsByThreadId/:threadId": "CourseController.getPostsByThreadId",
     
     // School page, show list courses
     "get /schools/:school": "CourseController.get",

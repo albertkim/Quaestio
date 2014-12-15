@@ -1,19 +1,38 @@
 <% include partials/header %>
 
-	<div class="container">
+	<div class="container" ng-app="course">
         
 		<h3>School: </h3>
 		<a href="<%= schoolName %>"><%= schoolName %></a>
 		
 		<h3>Course: <%= course.name %></h3>
         
-		<% for(var i=0; i<course.units.length; i++) { %>
-            <% var unit = course.units[i]; %>
-            <div><a><%= unit.name %></a></div>
-		<% } %>
+        <div ng-controller="courseController">
+            
+            <h3>Units</h3>
+            <div ng-init="units=[]" ng-repeat="unit in units">
+                <div><a ng-click="getThreadsByUnitId($index)">{{ unit.name }}</a></div>
+            </div>
+            
+            <h3>Threads</h3>
+            <div ng-init="threads=[]" ng-repeat="thread in threads">
+                <div><a ng-click="getPostsByThreadId($index)">{{ thread.content }}</a></div>
+            </div>
+            
+            <h3>Posts</h3>
+            <div ng-init="posts=[]" ng-repeat="post in posts">
+                <div><a>{{ post.content }}</a></div>
+            </div>
+            
+        </div>
 
 	</div>
 
+<script>
+    var schoolName = "<%- schoolName %>";
+    var course = <%- JSON.stringify(course) %>;
+    console.log(course);
+</script>
 <script src="/js/course.js"></script>
 
 <% include partials/footer %>
