@@ -43,9 +43,6 @@ module.exports.routes = {
     * for configuration options and examples.                                  *
     *                                                                          *
     ***************************************************************************/
-
-    "get /register": "UserController.get",
-    
     
     // Course page
     "get /schools/:school/:courseId": "CourseController.getCourse",
@@ -60,6 +57,10 @@ module.exports.routes = {
     "get /schools/:school": "CourseController.get",
     
     // Main page, show list of schools
-    "get /schools": "SchoolController.get"
+    "get /schools": "SchoolController.get",
+    
+    // Register page
+    "get /register": "UserController.get",
+    "post /register": "UserController.register",
 
 };

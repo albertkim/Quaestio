@@ -8,7 +8,8 @@ module.exports = {
 	attributes: {
 		email: {
 			type: "string",
-			required: true
+			required: true,
+            unique: true
 		},
 		name: {
 			type: "string"
@@ -19,19 +20,16 @@ module.exports = {
 		}
 	},
 
-	addUser: function(email, name, password, dateCreated) {
+	addUser: function(email, password, callback) {
 		var newUser = {
 			email: email,
-			name: name,
-			password: password,
-			dateCreated: new Date()
-		}
+			password: password
+		};
 		Users.create(newUser).exec(function(error, user) {
 			if(error) {
-				console.log("User could not be created");
-				console.log(error);
+				callback(error, null);
 			} else {
-				console.log("Created user " + user);
+				callback(null, user);
 			}
 		});
 	}

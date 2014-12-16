@@ -30,6 +30,10 @@ app.controller("courseController", function($scope, $http) {
         $http.get("/api/getThreadsByUnitId/" + unit.id).success(function(response){
             console.log(response);
             $scope.threads = response;
+            // update the url
+            
+            // clear current posts
+            $scope.posts = [];
         });
     },
         
