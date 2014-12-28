@@ -33,7 +33,7 @@ INSERT INTO UNITS (COURSEID, NAME) VALUES (1, "Recursion");
 
 # Users
 
-INSERT INTO USERS (EMAIL, NAME, PASSWORD) VALUES ("albert275@gmail.com", "Albert Kim", "password");
+INSERT INTO USERS (EMAIL, NAME, PASSWORD) VALUES ("albert275@gmail.com", "Albert Kim", "$2a$10$LWRER40iH3bwafSwDOKlBeO0pXdk3EpdwaSAqOHdFXKv4zs.YFY2G");
 
 # Threads
 

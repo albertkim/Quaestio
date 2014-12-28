@@ -62,5 +62,9 @@ module.exports.routes = {
     // Register page
     "get /register": "UserController.get",
     "post /register": "UserController.register",
+    
+    // Login page
+    "get /login": "LoginController.get",
+    "post /login": "LoginController.login"
 
 };

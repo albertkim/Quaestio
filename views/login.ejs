@@ -1,0 +1,14 @@
+<% include partials/header %>
+	
+	<div class="container" ng-app="login" ng-controller="loginController">
+
+		<h3>Welcome back</h3>
+
+		<input name="email" placeholder="email" ng-model="email"></input>
+		<input name="password" placeholder="password" type="password" ng-model="password"></input>
+		<button class="btn btn-primary" id="submit" ng-click="login()">Submit</button>
+
+	</div>
+
+<script src="js/login.js"></script>
+<% include partials/footer %>
