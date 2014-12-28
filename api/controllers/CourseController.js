@@ -10,7 +10,7 @@ module.exports = {
 			if(error){
 				console.log(error);
 			} else{
-				res.view("departments", {schoolName: schoolName, departments: departments});
+				res.view("departments", {session: req.session, schoolName: schoolName, departments: departments});
 			}
 			
 		});
@@ -21,7 +21,7 @@ module.exports = {
 		var courseId = req.param("courseId");
 
 		Courses.getCourseById(courseId, function(error, course){
-			res.view("course", { schoolName: schoolName, course: course[0] });
+			res.view("course", {session: req.session, schoolName: schoolName, course: course[0] });
 		})
 		
 	},

@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quaestio</title>
+    <head>
+        <title>Quaestio</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Viewport mobile tag for sensible mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
-    <!--  
-        Stylesheets and Preprocessors
-        ==============================
 
-        You can always bring in CSS files manually with `<link>` tags, or asynchronously
-        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
-        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+        <!--  
+            Stylesheets and Preprocessors
+            ==============================
 
-        By default, stylesheets from your `assets/styles` folder are included
-        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
-        are supported. In production, your styles will be minified and concatenated into
-        a single file.
-        
-        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-            
-            + Change the order of your CSS files
-            + Import stylesheets from other directories
-            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
-    -->
+            You can always bring in CSS files manually with `<link>` tags, or asynchronously
+            using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+            of Sails' conventional asset pipeline (boilerplate Gruntfile).
 
-    <link rel="stylesheet" href="/styles/importer.css">
-    <link rel="stylesheet" href="/libraries/bootstrap.css">
+            By default, stylesheets from your `assets/styles` folder are included
+            here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+            are supported. In production, your styles will be minified and concatenated into
+            a single file.
 
-    <script src="/libraries/jquery-1.11.1.js"></script>
-    <script src="/libraries/bootstrap.js"></script>
-    <script src="/libraries/angular.min.js"></script>
-    <script src="/libraries/underscore.js"></script>
+            To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+            For example, here are a few things you could do:
 
-  </head>
+                + Change the order of your CSS files
+                + Import stylesheets from other directories
+                + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+        -->
 
-  <body>
+        <link rel="stylesheet" href="/styles/importer.css">
+        <link rel="stylesheet" href="/libraries/bootstrap.css">
 
-  		<h1><a href="/">Quaestio</a></h1>
+        <script src="/libraries/jquery-1.11.1.js"></script>
+        <script src="/libraries/bootstrap.js"></script>
+        <script src="/libraries/angular.min.js"></script>
+        <script src="/libraries/underscore.js"></script>
+
+    </head>
+
+    <body>
+
+        <h1><a href="/">Quaestio</a></h1>
+
+        <!-- Rendered when the user is not logged in -->
+        <% if(session.user == undefined){ %>
         <a href="/login">Log in</a>
-  		<a href="/register">Register</a>
-  		<hr>
-  <!-- the body will get completed in footer.ejs -->
+        <a href="/register">Register</a>
+        
+        <% } else { %>
+        
+        <!-- Rendered when the user is logged in -->
+        <a href=""><%= session.user.email %></a>
+        <a href="/logout">Log out</a>
+        <% } %>
+        
+        <hr>
+    <!-- the body will get completed in footer.ejs -->

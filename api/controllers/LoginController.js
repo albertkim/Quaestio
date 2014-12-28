@@ -21,6 +21,11 @@ module.exports = {
                 res.send();
             }
         });
+    },
+    
+    logout: function(req, res) {
+        req.session.user = undefined;
+        res.redirect("/");
     }
 
 }

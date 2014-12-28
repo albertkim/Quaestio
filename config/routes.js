@@ -65,6 +65,7 @@ module.exports.routes = {
     
     // Login page
     "get /login": "LoginController.get",
-    "post /login": "LoginController.login"
+    "post /login": "LoginController.login",
+    "get /logout": "LoginController.logout"
 
 };

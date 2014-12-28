@@ -6,7 +6,7 @@ module.exports = {
 			if(error) {
 				console.log(error);
 			} else {
-				res.view("schools", {schools: schools});
+				res.view("schools", {session: req.session, schools: schools});
 			}
 			
 		});

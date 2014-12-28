@@ -1,7 +1,7 @@
 module.exports = {
 
 	get: function(req, res) {
-		res.view("register");
+		res.view("register", {session: req.session});
 	},
     
     register: function(req, res) {
