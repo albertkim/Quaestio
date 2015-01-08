@@ -41,6 +41,20 @@ module.exports = {
         });
     },
     
+    getResourcesByUnitId: function(req, res) {
+        var unitId = req.param("unitId");
+        console.log("getResourcesByUnitId unitId: " + unitId);
+        
+        Resources.getResourceByUnitId(unitId, function(error, resources) { 
+            if(error) {
+                console.log(error);
+                res.send({error: "Could not retrieve resources for unit with id: " + unitId});
+             } else {
+                res.send(resources);      
+             }
+        });
+    },
+    
     getThreadsByUnitId: function(req, res) {
         var unitId = req.param("unitId");
         console.log("getThreadsByUnitId unitId: " + unitId);

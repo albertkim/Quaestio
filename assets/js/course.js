@@ -15,7 +15,7 @@ app.controller("courseController", function($scope, $http) {
         $http.get("/api/getUnitsByCourseId/" + course.id).success(function(response){
             console.log(response);
             $scope.units = response;
-        });  
+        });
     };
     
     $scope.subscribeToThreads = function(unitId) {
@@ -25,9 +25,9 @@ app.controller("courseController", function($scope, $http) {
         });
     },
         
-    $scope.getThreadsByUnitId = function(index){
+    $scope.getThreadsByUnitId = function(index) {
         var unit = $scope.units[index];
-        $http.get("/api/getThreadsByUnitId/" + unit.id).success(function(response){
+        $http.get("/api/getThreadsByUnitId/" + unit.id).success(function(response) {
             console.log(response);
             $scope.threads = response;
             // update the url
@@ -35,11 +35,21 @@ app.controller("courseController", function($scope, $http) {
             // clear current posts
             $scope.posts = [];
         });
+        // get resources for the clicked unit
+        $scope.getResourcesByUnitId(index);
     },
         
-    $scope.getPostsByThreadId = function(index){
+    $scope.getResourcesByUnitId = function(index) {
+        var unit = $scope.units[index];
+        $http.get("/api/getResourcesByUnitId/" + unit.id).success(function(response) {
+            console.log(response);
+            $scope.resources = response;
+        });
+    },
+        
+    $scope.getPostsByThreadId = function(index) {
         var thread = $scope.threads[index];
-        $http.get("/api/getPostsByThreadId/" + thread.id).success(function(response){
+        $http.get("/api/getPostsByThreadId/" + thread.id).success(function(response) {
             console.log(response);
             $scope.posts = response;
         });

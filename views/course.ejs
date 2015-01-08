@@ -14,6 +14,11 @@
                 <div><a ng-click="getThreadsByUnitId($index)">{{ unit.name }}</a></div>
             </div>
             
+            <h3>Resources</h3>
+            <div ng-init="resources=[]" ng-repeat="resource in resources">
+                <div><a>{{ resource.description }}</a></div>
+            </div>
+            
             <h3>Threads</h3>
             <div ng-init="threads=[]" ng-repeat="thread in threads">
                 <div><a ng-click="getPostsByThreadId($index)">{{ thread.content }}</a></div>

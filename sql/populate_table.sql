@@ -35,6 +35,14 @@ INSERT INTO UNITS (COURSEID, NAME) VALUES (1, "Recursion");
 
 INSERT INTO USERS (EMAIL, NAME, PASSWORD) VALUES ("albert275@gmail.com", "Albert Kim", "$2a$10$LWRER40iH3bwafSwDOKlBeO0pXdk3EpdwaSAqOHdFXKv4zs.YFY2G");
 
+# Resources
+
+INSERT INTO RESOURCES (USERID, UNITID, URL, DESCRIPTION) VALUES (1, 1, "www.google.com", "Google it");
+INSERT INTO RESOURCES (USERID, UNITID, URL, DESCRIPTION) VALUES (1, 1, "www.khanacademy.org", "Khan is great!");
+INSERT INTO RESOURCES (USERID, UNITID, URL, DESCRIPTION) VALUES (1, 1, "www.khanacadenmy.org", "Again, Khan is great");
+INSERT INTO RESOURCES (USERID, UNITID, URL, DESCRIPTION) VALUES (1, 1, "www.yahoo.com", "Yahoo... used to be great?");
+INSERT INTO RESOURCES (USERID, UNITID, URL, DESCRIPTION) VALUES (1, 1, "www.zerohedge.com", "Best cynical financial news site");
+
 # Threads
 
 INSERT INTO THREADS (USERID, UNITID, CONTENT) VALUES (1, 1, "Is everyone enjoying this course so far?");

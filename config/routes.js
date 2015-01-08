@@ -50,6 +50,7 @@ module.exports.routes = {
     "get /api/getUnitsByCourseId/:courseId": "CourseController.getUnitsByCourseId",
     "get /api/subscribeToThreads/:unitId": "CourseController.subscribeToThreads",
     "get /api/subscribeToPosts/:threadId": "CourseController.subscribeToPosts",
+    "get /api/getResourcesByUnitId/:unitId": "CourseController.getResourcesByUnitId",
     "get /api/getThreadsByUnitId/:unitId": "CourseController.getThreadsByUnitId",
     "get /api/getPostsByThreadId/:threadId": "CourseController.getPostsByThreadId",
     
